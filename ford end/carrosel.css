@@ -1,0 +1,45 @@
+.carrousel-inner img{
+    width: 100%;
+    height: auto;
+    max-width: 600px; /*ajuste a altura amxima conforme nescessario*/
+    object-fit: cover;/*ajuste aimagem para abrir o espaço*/
+}
+
+.carrousel{
+    max-width: 800px /*ajuste alargura maxima conforme o nescessario*/
+     }
+        
+
+
+.carrousel-caption{
+max-width: 800px;/*ajuste a largura maxima conforme nescessario*/
+margin: auto; /*centraliza o carrossel*/
+}  
+.carousel-caption {
+  /* background-color: rgba( 0,0,0,0.5); /*fundo semi-transparente* */
+  padding:10px;
+}
+.spancer{
+    margin-top: 30px;/*espaço adicional entre o carrousel eo formulario*/
+}    
+
+.titulo{
+    display: block;
+    margin-bottom: 10px;
+}
+.contato{
+    padding: 20px;
+}
+.carrousel-control-prev-icon,
+.carrousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    }
+
