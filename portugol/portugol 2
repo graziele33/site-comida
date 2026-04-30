@@ -1,0 +1,10 @@
+programa {
+  funcao inicio() {
+  
+    //declaração de variàveis
+    cadeia nomeFuncionario
+    real salarioFixo, valorVendas, bonus, salariotota
+
+
+  }
+}
