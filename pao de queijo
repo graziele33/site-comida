@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pão de Queijo Mineirinho</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#fff7e8;
+}
+
+header{
+background:#8B4513;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+header h1{
+font-size:50px;
+}
+
+nav{
+background:#c96d00;
+display:flex;
+justify-content:center;
+}
+
+nav a{
+padding:15px 25px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+background:#8B4513;
+}
+
+.banner img{
+width:100%;
+height:500px;
+object-fit:cover;
+}
+
+section{
+padding:40px;
+}
+
+h2{
+color:#8B4513;
+margin-bottom:15px;
+}
+
+.historia{
+font-size:20px;
+line-height:1.8;
+}
+
+.produtos{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.card{
+width:280px;
+background:white;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+text-align:center;
+margin-top:10px;
+}
+
+.card p{
+text-align:center;
+margin:10px;
+font-size:18px;
+}
+
+button{
+background:#d97706;
+color:white;
+border:none;
+padding:10px;
+width:90%;
+margin:10px;
+cursor:pointer;
+border-radius:5px;
+font-size:18px;
+}
+
+button:hover{
+background:#8B4513;
+}
+
+#carrinho{
+background:white;
+border-radius:10px;
+padding:20px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-top:10px;
+font-size:17px;
+}
+
+.finalizar{
+background:green;
+padding:15px;
+font-size:20px;
+}
+
+footer{
+background:#8B4513;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🧀 Pão de Queijo Mineirinho</h1>
+
+<p>O verdadeiro sabor de Minas Gerais.</p>
+
+</header>
+
+<nav>
+
+<a href="#historia">História</a>
+
+<a href="#produtos">Produtos</a>
+
+<a href="#carrinho">Carrinho</a>
+
+<a href="#contato">Contato</a>
+
+</nav>
+
+<div class="banner">
+
+<img src="banner.jpg">
+
+</div>
+
+<section id="historia">
+
+<h2>Nossa História</h2>
+
+<p class="historia">
+
+Tudo começou com uma receita tradicional de família, passada de geração em geração.
+O Pão de Queijo Mineirinho nasceu para levar até você o verdadeiro sabor de Minas Gerais.
+Utilizamos ingredientes selecionados, queijo de qualidade e muito carinho em cada fornada.
+Nosso compromisso é oferecer produtos fresquinhos, saborosos e preparados com dedicação.
+
+</p>
+
+</section>
+
+<section id="produtos">
+
+<h2>Nossos Produtos</h2>
+
+<div class="produtos">
+
+<div class="card">
+
+<img src="banner.jpg">
+
+<h3>Pão de Queijo Tradicional</h3>
+
+<p>R$ 20,00</p>
+
+<button onclick="comprar('Tradicional',20)">Comprar</button>
+
+</div>
+
+<div class="card">
+
+<img src="banner.jpg">
+
+<h3>Recheado com Catupiry</h3>
+
+<p>R$ 28,00</p>
+
+<button onclick="comprar('Catupiry',28)">Comprar</button>
+
+</div>
+
+<div class="card">
+
+<img src="banner.jpg">
+
+<h3>Calabresa</h3>
+
+<p>R$ 30,00</p>
+
+<button onclick="comprar('Calabresa',30)">Comprar</button>
+
+</div>
+
+<div class="card">
+
+<img src="banner.jpg">
+
+<h3>Bacon</h3>
+
+<p>R$ 32,00</p>
+
+<button onclick="comprar('Bacon',32)">Comprar</button>
+
+</div>
+
+<div class="card">
+
+<img src="banner.jpg">
+
+<h3>Quatro Queijos</h3>
+
+<p>R$ 35,00</p>
+
+<button onclick="comprar('Quatro Queijos',35)">Comprar</button>
+
+</div>
+
+<div class="card">
+
+<img src="banner.jpg">
+
+<h3>Kit Família</h3>
+
+<p>R$ 55,00</p>
+
+<button onclick="comprar('Kit Família',55)">Comprar</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="carrinho">
+
+<h2>🛒 Carrinho</h2>
+
+<ul id="lista"></ul>
+
+<h2>Total: R$ <span id="total">0.00</span></h2>
+
+<h2>📍 Endereço de Entrega</h2>
+
+<input placeholder="Nome Completo">
+
+<input placeholder="Rua">
+
+<input placeholder="Número">
+
+<input placeholder="Bairro">
+
+<input placeholder="Cidade">
+
+<input placeholder="CEP">
+
+<h2>💳 Forma de Pagamento</h2>
+
+<select>
+
+<option>PIX</option>
+
+<option>Cartão de Crédito</option>
+
+<option>Cartão de Débito</option>
+
+<option>Boleto</option>
+
+<option>Dinheiro</option>
+
+</select>
+
+<button class="finalizar" onclick="finalizar()">
+
+Finalizar Compra
+
+</button>
+
+</section>
+
+<section id="contato">
+
+<h2>Contato</h2>
+
+<p><strong>📍 Endereço:</strong> Rua das Flores, 250 - Centro - Belo Horizonte/MG</p>
+
+<p><strong>📞 Telefone:</strong> (31) 99999-9999</p>
+
+<p><strong>📱 WhatsApp:</strong> (31) 99999-9999</p>
+
+<p><strong>📧 E-mail:</strong> contato@mineirinho.com</p>
+
+</section>
+
+<footer>
+
+<h2>🧀 Pão de Queijo Mineirinho</h2>
+
+<p>Desde 2025 levando qualidade para sua mesa.</p>
+
+</footer>
+
+<script>
+
+let total=0;
+
+function comprar(produto,valor){
+
+let item=document.createElement("li");
+
+item.innerHTML=produto+" - R$ "+valor.toFixed(2);
+
+document.getElementById("lista").appendChild(item);
+
+total+=valor;
+
+document.getElementById("total").innerHTML=total.toFixed(2);
+
+}
+
+function finalizar(){
+
+if(total==0){
+
+alert("Seu carrinho está vazio!");
+
+return;
+
+}
+
+alert("Compra realizada com sucesso!\n\nValor Total: R$ "+total.toFixed(2)+"\n\nObrigado pela preferência!");
+
+}
+
+</script>
+
+</body>
+</html>
